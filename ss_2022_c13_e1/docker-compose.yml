@@ -1,0 +1,19 @@
+name: ss_2022_c13_demo
+
+services:
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+    ports: 
+      - "5432:5432"
+
+  pgadmin: 
+    image: dpage/pgadmin4 
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@domain.com
+      PGADMIN_DEFAULT_PASSWORD: secret
+    ports: 
+      - "8081:80"
+
